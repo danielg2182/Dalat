@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina inicio</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="logo-container">
+        <div class="logo-icon">Σ</div>
+        <span class="logo-text">Dalat</span>
+      </div>
+      <nav class="main-menu">
+        <ul>
+        <li><a href="#" class="nav-link active" data-view="dashboard">Dashboard</a></li>
+                
+                <li><a href="#" class="nav-link" data-view="horario">Horario</a></li>
+                <li><a href="#" class="nav-link" data-view="methods">Metodos</a></li>
+                <li><a href="#" class="nav-link" data-view="notes">Notas</a></li>
+                <li><a href="#" class="nav-link" data-view="repository">Repositorio</a></li>
+        </ul>
+      </nav>
+      <div class="user-profile">
+        <span class="current-date">Martes 1 de septiembre</span>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+    <main class="dashboard-container">
+
+        <section id="dashboard-view" class="app-view active-view">
+      <!-- Seccion de bienvenid-->
+      <section class="welcome-section">
+        <h1>Holaaaa</h1>
+        <p>
+          Tienes <span class="highlight-text">9 tareas pendientes</span> esta
+          semana.
+        </p>
+      </section>
+
+      <!-- Tarjetas de estadisticas-->
+
+      <section class="stats-grid">
+        <!--tarjeta 1 morada-->
+        <div class="stat-card card-purple">
+            <div class="stat-header">
+                <span class="stat-title">Horas esta semana</span>
+            </div>
+            <div class="stat-value">31h</div>
+            <div class="stat-footer">+3h vs la anterior semana</div>
+        </div>
+<!--tarjeta 2 verde-->
+        <div class="stat-card card-green">
+            <div class="stat-header">
+                <span class="stat-title">Tareas</span>
+            </div>
+            <div class="stat-value">1/5</div>
+            <div class="stat-footer">2 vencen hoy</div>
+        </div>
+
+<!--tarjeta 3 amariilla-->
+<div class="stat-card card-yellow">
+    <div class="stat-header">
+                    <span class="stat-title">RACHA ACTIVA</span>
+                  
+                </div>
+                <div class="stat-value">12 días</div>
+                <div class="stat-footer">Tu récord: 21 días</div>
+            </div>
+</div>
+<!--tarjeta 4 rosa-->
+<div class="stat-card card-pink">
+                <div class="stat-header">
+                    <span class="stat-title">PROMEDIO GPA</span>
+                    
+                </div>
+                <div class="stat-value">8.3</div>
+                <div class="stat-footer">↑ 0.3 este semestre</div>
+            </div>
+      </section>
+      <!-- ================= BARRA DE NUEVA TAREA ================= -->
+<!-- ================= BARRA DE NUEVA TAREA ================= -->
+<section class="task-input-bar">
+    <div class="task-input-wrapper">
+        <span class="bullet-dot"></span>
+        <input id="taskInput" type="text" placeholder="Escribe una nueva tarea aquí..." class="task-text-input">
+    </div>
+
+    <div class="task-controls">
+        
+       <!-- Selector de Materia Personalizado -->
+        <details class="priority-dropdown-container" id="subjectDetails">
+            <summary class="priority-dropdown subject-custom-dropdown">
+                <span id="subjectText">General</span>
+                <span class="dropdown-arrow">▾</span>
+            </summary>
+            
+            <div class="priority-menu" id="subjectMenu">
+                <div class="subject-option" data-value="General">General</div>
+                <div class="subject-option" data-value="Cálculo">Cálculo</div>
+                <div class="subject-option" data-value="Historia">Historia</div>
+                <div class="subject-option" data-value="Economía">Economía</div>
+                <div class="subject-option subject-add-option" data-value="nueva_materia_opcion">+ Agregar otra materia...</div>
+            </div>
+        </details>
+
+        <!-- Input oculto para cuando elijan agregar otra materia -->
+        <input id="newSubjectInput" type="text" placeholder="Nueva materia..." class="new-subject-input">
+        <button id="saveSubjectBtn" type="button" class="save-subject-btn">✓</button>
+
+        <!-- Selector de Prioridad Desplegable -->
+        <details class="priority-dropdown-container" id="priorityDetails">
+            <summary class="priority-dropdown">
+                <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                <span id="priorityText">Urgente</span>
+                <span class="dropdown-arrow">▾</span>
+            </summary>
+            
+            <div class="priority-menu">
+                <div class="priority-option"><span class="dot-urgent"></span> Urgente</div>
+                <div class="priority-option"><span class="dot-progress"></span> En Progreso</div>
+                <div class="priority-option"><span class="dot-later"></span> Para después</div>
+            </div>
+        </details>
+       
+
+        <!-- Botón del Calendario -->
+        <button class="calendar-btn" aria-label="Seleccionar fecha">
+            <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </button>
+
+        <!-- Botón Añadir -->
+        <button id="addTaskBtn" class="add-task-btn">+ Añadir</button>
+    </div>
+</section>
+        <!-- ================= SECCIÓN INFERIOR: TABLERO Y WIDGETS ================= -->
+        <div class="dashboard-grid-lower">
+            
+            <!-- COLUMNA IZQUIERDA: Tablero de Tareas -->
+            <section class="task-board-container">
+                <div class="board-header">
+                    <h2>Tablero de tareas</h2>
+                    <span class="task-count-badge">9 pendientes</span>
+                </div>
+
+                <!-- Columnas del Tablero -->
+                <div class="board-columns">
+                    
+                    <!-- Columna 1: Urgente -->
+                    <div class="column-card col-urgent" id="urgentColumn">
+                        <div class="column-header">
+                            <span class="dot-indicator"></span>
+                            <span class="column-title">Urgente</span>
+                            <span class="column-counter">3</span>
+                        </div>
+
+                        <div class="task-cards-list">
+                            <!-- Tarea 1 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Ensayo de Cálculo — integrales dobles</p>
+                                </div>
+                                <span class="task-subject">Cálculo III</span>
+                            </div>
+
+                            <!-- Tarea 2 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Entregar práctica de Química</p>
+                                </div>
+                                <span class="task-subject">Química</span>
+                            </div>
+
+                            <!-- Tarea 3 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Presentación de Arquitectura</p>
+                                </div>
+                                <span class="task-subject">Sistemas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: En Progreso -->
+                    <div class="column-card col-progress" id="progressColumn">
+                        <div class="column-header">
+                            <span class="dot-indicator"></span>
+                            <span class="column-title">En Progreso</span>
+                            <span class="column-counter">3</span>
+                        </div>
+
+                        <div class="task-cards-list">
+                            <!-- Tarea 1 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Leer capítulos 7-9 de Economía</p>
+                                </div>
+                                <span class="task-subject">Economía</span>
+                            </div>
+
+                            <!-- Tarea 2 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Completar ejercicios del parcial</p>
+                                </div>
+                                <span class="task-subject">Cálculo III</span>
+                            </div>
+
+                            <!-- Tarea 3 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Revisar apuntes de Historia</p>
+                                </div>
+                                <span class="task-subject">Historia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 3: Para después -->
+                    <div class="column-card col-later" id="laterColumn" >
+                        <div class="column-header">
+                            <span class="dot-indicator"></span>
+                            <span class="column-title">Para después</span>
+                            <span class="column-counter">3</span>
+                        </div>
+
+                        <div class="task-cards-list">
+                            <!-- Tarea 1 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Cuestionario de Historia Universal</p>
+                                </div>
+                                <span class="task-subject">Historia</span>
+                            </div>
+
+                            <!-- Tarea 2 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Investigar proyecto final</p>
+                                </div>
+                                <span class="task-subject">Arquitectura</span>
+                            </div>
+
+                            <!-- Tarea 3 -->
+                            <div class="task-card-item">
+                                <div class="task-card-top">
+                                    <span class="checkbox-circle"></span>
+                                    <p class="task-name">Leer artículo extra de Economía</p>
+                                </div>
+                                <span class="task-subject">Economía</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- COLUMNA DERECHA: Widgets (Meta Semanal y Recordatorio) -->
+            <aside class="dashboard-sidebar">
+                
+               <!-- Widget: Meta Semanal -->
+                <div class="widget-card weekly-goal-card">
+                    <h3 class="widget-title">META SEMANAL</h3>
+                    <div class="goal-chart-container">
+                        <div class="svg-gauge-wrapper">
+                            <svg class="progress-ring" viewBox="0 0 160 95">
+    <!-- Fondo del arco -->
+    <path class="ring-bg" d="M 15 78 A 65 65 0 0 1 145 78" />
+    <!-- Arco de progreso (78%) -->
+    <path class="ring-fill" d="M 15 78 A 65 65 0 0 1 145 78" />
+    
+    <!-- Ambas etiquetas alineadas exactamente a la misma altura (y="94") -->
+    <text x="0" y="94" class="svg-limit-text">0h</text>
+    <text x="138" y="94" class="svg-limit-text">40h</text>
+</svg>
+                            
+                            <div class="progress-inner-content">
+                                <span class="progress-hours">31h</span>
+                                <span class="progress-label">de 40h meta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goal-status-text">
+                        <strong>78% completado</strong> · faltan 9h
+                    </div>
+                </div>
+                <!-- Widget: Recordatorio del día -->
+                <div class="widget-card quote-card">
+                    <p class="quote-text">"Tu potencial es infinito. Solo limitado por tus pensamientos."</p>
+                    <span class="quote-author">— Recordatorio del día</span>
+                </div>
+
+            </aside>
+
+        </div>
+       
+      
+     </section>
+
+
+<!-- ================= SECCIÓN HORARIO ================= -->
+    <section id="horario-view" class="app-view">
+        <div class="horario-header-flex">
+            <div>
+                <h2>Horario</h2>
+                <p id="horarioDateSubtitle" style="color: var(--text-muted);">Cargando fecha actual...</p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <button class="btn-primary-custom" id="addScheduleClassBtn" type="button">+ Agregar clase</button>
+                <div class="view-toggle-container">
+                    <button class="view-toggle-btn active-toggle" id="viewDayBtn" type="button">Día</button>
+                    <button class="view-toggle-btn" id="viewWeekBtn" type="button">Semana</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor Vista por Día (Timeline) -->
+        <div id="dayViewContainer" class="timeline-container">
+            <!-- Se inyecta dinámicamente vía JS -->
+        </div>
+
+        <!-- Contenedor Vista por Semana (Grid) -->
+        <div id="weekViewContainer" class="week-grid-container" style="display: none;">
+            <!-- Se inyecta dinámicamente vía JS -->
+        </div>
+    </section>
+
+<!-- ================= MODAL NUEVA CLASE ================= -->
+    <div class="schedule-modal-overlay" id="scheduleModalOverlay">
+        <div class="schedule-modal-card">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 16px;">Nueva clase en el Horario</h3>
+            
+            <div class="form-group">
+                <label>Día de la semana</label>
+                <select id="modalDayInput" class="form-input">
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sábado">Sábado</option>
+                </select>
+            </div>
+
+            <div class="form-grid-2">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Hora de inicio</label>
+                    <input type="time" id="modalTimeInput" class="form-input" value="08:00">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label>Duración</label>
+                    <input type="text" id="modalDurationInput" class="form-input" value="90 min">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 16px;">
+                <label>Aula o ubicación</label>
+                <input type="text" id="modalRoomInput" placeholder="Ej. Aula 204 o Sala Virtual" class="form-input" value="Aula 101">
+            </div>
+
+            <div class="form-group">
+                <label>Materia (O selecciona de tus notas)</label>
+                <select id="modalSubjectSelect" class="form-input">
+                    <option value="">-- Usar nombre personalizado --</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="modalCustomNameGroup">
+                <label>Nombre personalizado de la clase</label>
+                <input type="text" id="modalCustomNameInput" placeholder="Ej. Tutoría / Clase general" class="form-input">
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-primary-custom" id="modalSaveClassBtn" type="button">Guardar clase</button>
+                <button class="btn-secondary-custom" id="modalCancelClassBtn" type="button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <!-- ================= SECCIÓN NOTAS (YA EXISTENTE) ================= -->
+    <section id="notes-view" class="app-view">
+          <div class="notes-header">
+              <div>
+                  <h2>Calificaciones</h2>
+                  <p>Registro por cortes académicos — semestre actual.</p>
+              </div>
+              <button class="btn-primary-custom" id="addSubjectMainBtn" type="button">+ Añadir materia</button>
+          </div>
+
+          <!-- Métricas Superiores Dinámicas -->
+          <div class="notes-metrics-grid">
+              <div class="metric-card card-purple-note">
+                  <span class="metric-title">PROMEDIO GLOBAL</span>
+                  <h3 class="metric-value" id="globalAvgVal">0.00</h3>
+                  <span class="metric-desc">todas las materias</span>
+              </div>
+              <div class="metric-card card-green-note">
+                  <span class="metric-title">MEJOR MATERIA</span>
+                  <h3 class="metric-value" id="bestSubjectVal">—</h3>
+                  <span class="metric-desc" id="bestSubjectDesc">0.00 promedio</span>
+              </div>
+              <div class="metric-card card-pink-note">
+                  <span class="metric-title">A REFORZAR</span>
+                  <h3 class="metric-value" id="worstSubjectVal">—</h3>
+                  <span class="metric-desc" id="worstSubjectDesc">0.00 promedio</span>
+              </div>
+          </div>
+
+          <!-- Cuadrícula Dinámica de Materias y Calculadora Rápida -->
+          <div class="notes-grid" id="subjectsGridContainer">
+              <!-- Las materias dinámicas se insertarán automáticamente aquí antes de la calculadora -->
+
+              <!-- Tarjeta fija: Calculadora Rápida -->
+              <div class="subject-grade-card" id="quickCalculatorCard">
+                  <div>
+                      <div class="calc-header-box calc-header-flex">
+                          <div>
+                              <h4>Calculadora rápida</h4>
+                              <span class="subject-subinfo">Promedio ponderado al instante</span>
+                          </div>
+                          <span id="instantAvgTop" class="calc-top-score">0.00</span>
+                      </div>
+                      <div class="calc-table-head">
+                          <span>EVALUACIÓN</span>
+                          <span>NOTA /10</span>
+                          <span>PESO %</span>
+                          <span></span>
+                      </div>
+                      <div class="calc-rows-container" id="calcRowsContainer">
+                          <div class="calc-row-item">
+                              <input type="text" value="Parcial 1" class="calc-input text-left calc-name">
+                              <input type="number" value="10" min="0" max="10" step="0.1" class="calc-input text-center calc-score">
+                              <input type="number" value="30" min="0" max="100" class="calc-input text-center calc-weight">
+                              <button class="calc-delete-btn" type="button">×</button>
+                          </div>
+                          <div class="calc-row-item">
+                              <input type="text" value="Parcial 2" class="calc-input text-left calc-name">
+                              <input type="number" value="3" min="0" max="10" step="0.1" class="calc-input text-center calc-score">
+                              <input type="number" value="30" min="0" max="100" class="calc-input text-center calc-weight">
+                              <button class="calc-delete-btn" type="button">×</button>
+                          </div>
+                          <div class="calc-row-item">
+                              <input type="text" value="Trabajo" class="calc-input text-left calc-name">
+                              <input type="number" value="9" min="0" max="10" step="0.1" class="calc-input text-center calc-score">
+                              <input type="number" value="40" min="0" max="100" class="calc-input text-center calc-weight">
+                              <button class="calc-delete-btn" type="button">×</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div>
+                      <button class="add-row-btn" id="addRowBtn" type="button">+ Añadir fila</button>
+                      <div class="calc-result-box" id="calcResultBox">
+                          Promedio: <span id="instantAvgBottom">0.00</span> / 10 · <span id="totalWeightSpan">100</span>% registrado
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+          </div>
+      </section>
+
+      <!-- ================= VISTA DE DETALLE DE MATERIA (INTERNA) ================= -->
+      <section id="subject-detail-view" class="app-view">
+          <a href="#" class="back-link" id="backToNotesBtn">← Todas las materias</a>
+          
+          <div class="subject-grade-card" style="margin-bottom: 24px;">
+              <div class="card-subject-top">
+                  <div>
+                      <h2 id="detailSubjectTitle" style="font-size: 1.5rem; font-weight: 700; color: var(--text-main);">Materia</h2>
+                      <span class="subject-subinfo" id="detailSubjectSub">3 cortes · 0 evaluaciones</span>
+                  </div>
+                  <span class="subject-grade-num" id="detailFinalGrade">0.0</span>
+              </div>
+          </div>
+
+          <!-- Pestañas de Cortes -->
+          <div class="cuts-nav-bar" id="cutsNavBar">
+              <button class="cut-tab-btn active-cut" data-cut="1">1er Corte (33%)</button>
+              <button class="cut-tab-btn" data-cut="2">2do Corte (33%)</button>
+              <button class="cut-tab-btn" data-cut="3">3er Corte (34%)</button>
+          </div>
+
+          <!-- Contenido del Corte Seleccionado -->
+          <div class="subject-grade-card">
+              <div class="card-subject-top">
+                  <div>
+                      <h4 id="currentCutTitle">1er Corte</h4>
+                      <span class="subject-subinfo" id="currentCutWeightSub">Peso en nota final: 33% · 0 evaluaciones</span>
+                  </div>
+                  <span class="subject-grade-num" id="currentCutAvg">0.00</span>
+              </div>
+
+              <div class="calc-table-head" style="margin-top: 16px;">
+                  <span>EVALUACIÓN</span>
+                  <span>TIPO</span>
+                  <span>CALIFICACIÓN</span>
+                  <span>PESO %</span>
+                  <span></span>
+              </div>
+              
+              <div id="evaluationsRowsContainer" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                  <!-- Las notas del corte irán aquí dinámicamente -->
+              </div>
+
+              <button class="add-row-btn" id="openAddNoteFormBtn" type="button">+ Agregar nota a este corte</button>
+          </div>
+
+          <!-- Formulario dinámico para "+ Agregar nota" -->
+          <div class="add-note-form-card" id="addNoteFormCard" style="display: none;">
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 16px;" id="formTitleHeader">Nueva nota — 1er Corte</h3>
+              
+              <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" id="noteNameInput" placeholder="Ej. Parcial del corte" class="form-input">
+              </div>
+
+              <div class="form-grid-2">
+                  <div class="form-group" style="margin-bottom: 0;">
+                      <label>Tipo</label>
+                      <select id="noteTypeInput" class="form-input">
+                          <option value="Examen">Examen</option>
+                          <option value="Tarea">Tarea</option>
+                          <option value="Proyecto">Proyecto</option>
+                      </select>
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0;">
+                      <label>Fecha</label>
+                      <input type="date" id="noteDateInput" class="form-input">
+                  </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-top: 16px;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                      <label>Calificación (sobre 10)</label>
+                      <input type="number" id="noteScoreInput" min="0" max="10" step="0.1" value="8.5" class="form-input">
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0;">
+                      <label>Peso en el corte (%)</label>
+                      <input type="number" id="noteWeightInput" min="0" max="100" value="40" class="form-input">
+                  </div>
+              </div>
+
+              <div class="form-actions">
+                  <button class="btn-primary-custom" id="saveNewNoteBtn" type="button">Guardar nota</button>
+                  <button class="btn-secondary-custom" id="cancelNewNoteBtn" type="button">Cancelar</button>
+              </div>
+          </div>
+         
+      </section>
+
+    
+    </main>
+
+     <!-- ================= MODAL NUEVA MATERIA ================= -->
+    <div class="schedule-modal-overlay" id="subjectModalOverlay">
+        <div class="schedule-modal-card">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 16px;">Añadir nueva materia</h3>
+            
+            <div class="form-group">
+                <label>Nombre de la materia</label>
+                <input type="text" id="modalSubjectNameInput" placeholder="Ej. Cálculo Avanzado" class="form-input">
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-primary-custom" id="modalSaveSubjectBtn" type="button">Guardar materia</button>
+                <button class="btn-secondary-custom" id="modalCancelSubjectBtn" type="button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Conexión del JavaScript -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
